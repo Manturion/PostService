@@ -4,7 +4,6 @@ import jakarta.persistence.*;
 import lombok.Data;
 
 import java.util.Collection;
-import java.util.Objects;
 
 @Entity
 @Data
@@ -26,7 +25,7 @@ public class UserEntity {
     @Basic
     @Column(name = "password", nullable = false, length = -1)
     private String password;
-    @OneToMany(mappedBy = "userByUserId")
+    @OneToMany(mappedBy = "user")
     private Collection<PostEntity> postsById;
 
 }

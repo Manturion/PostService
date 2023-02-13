@@ -10,10 +10,6 @@ import java.util.Optional;
 @Repository
 public interface PostRepository extends JpaRepository<PostEntity, Long> {
 
-//    Optional<PostEntity> getPostById(Long id);
-//
-//    Optional<List<PostEntity>> getAllPosts();
-//
-//    Optional<List<PostEntity>> getPostsByCategory(String category);
+    List<PostEntity> getPostsByCategory(String category);
 
 }

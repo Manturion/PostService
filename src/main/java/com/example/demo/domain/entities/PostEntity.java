@@ -3,7 +3,6 @@ package com.example.demo.domain.entities;
 import jakarta.persistence.*;
 import lombok.Data;
 
-import java.util.Objects;
 
 @Entity
 @Data
@@ -22,10 +21,7 @@ public class PostEntity {
     @Basic
     @Column(name = "content", nullable = false, length = -1)
     private String content;
-    @Basic
-    @Column(name = "user_id", nullable = false)
-    private Long userId;
     @ManyToOne
     @JoinColumn(name = "user_id", referencedColumnName = "id", nullable = false)
-    private UserEntity userByUserId;
+    private UserEntity user;
 }
