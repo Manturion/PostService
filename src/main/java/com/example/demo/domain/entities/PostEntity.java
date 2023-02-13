@@ -12,7 +12,7 @@ public class PostEntity {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Id
     @Column(name = "id", nullable = false)
-    private int id;
+    private Long id;
     @Basic
     @Column(name = "category", nullable = false, length = -1)
     private String category;
@@ -24,7 +24,7 @@ public class PostEntity {
     private String content;
     @Basic
     @Column(name = "user_id", nullable = false)
-    private int userId;
+    private Long userId;
     @ManyToOne
     @JoinColumn(name = "user_id", referencedColumnName = "id", nullable = false)
     private UserEntity userByUserId;
