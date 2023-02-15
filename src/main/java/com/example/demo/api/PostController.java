@@ -32,9 +32,6 @@ public class PostController {
         return postService.getPostById(id);
     }
 
-    //    public List<PostDto> getPostsOfUser(){
-//
-//    }
     @GetMapping("/category")
     public List<PostDto> getPostsByCategory(@RequestParam String category) {
         return postService.getPostsByCategory(category);
