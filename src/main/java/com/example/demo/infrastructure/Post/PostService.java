@@ -3,7 +3,7 @@ package com.example.demo.infrastructure.Post;
 import com.example.demo.domain.entities.PostEntity;
 import com.example.demo.domain.entities.UserEntity;
 import com.example.demo.domain.repositories.PostRepository;
-import com.example.demo.domain.repositories.UserRepositry;
+import com.example.demo.domain.repositories.UserRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
@@ -15,10 +15,10 @@ import java.util.Optional;
 public class PostService {
 
     private final PostRepository postRepository;
-    private final UserRepositry userRepositry;
+    private final UserRepository userRepository;
 
     public PostDto createPost(PostDto postDto) {
-        UserEntity user = userRepositry.findById(postDto.getUserId()).orElseThrow();
+        UserEntity user = userRepository.findById(postDto.getUserId()).orElseThrow();
         PostEntity post = PostDto.mapToEntity(postDto, user);
         postRepository.save(post);
         return postDto;
